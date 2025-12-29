@@ -1,5 +1,5 @@
 {
-  "name": "@instantdb/mcp",
+  "name": "@iflow-mcp/instantdb_instant",
   "version": "0.0.0",
   "description": "Model Context Protocol (MCP) server for managing Instant apps, schemas, and permissions!",
   "homepage": "https://github.com/instantdb/instant/tree/main/client/packages/mcp",
@@ -41,10 +41,10 @@
   },
   "dependencies": {
     "@honeycombio/opentelemetry-node": "^0.7.2",
-    "@instantdb/admin": "workspace:*",
-    "@instantdb/core": "workspace:*",
-    "@instantdb/platform": "workspace:*",
-    "@instantdb/version": "workspace:*",
+    "@instantdb/admin": "^0.22.96",
+    "@instantdb/core": "^0.22.96",
+    "@instantdb/platform": "^0.22.96",
+    "@instantdb/version": "^0.22.96",
     "@modelcontextprotocol/sdk": "^1.17.2",
     "@opentelemetry/api": "^1.9.0",
     "cookie-parser": "^1.4.7",

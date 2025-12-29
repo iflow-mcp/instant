@@ -28,8 +28,8 @@ import {
 import { decrypt, encrypt, hash, KeyConfig } from './crypto.ts';
 import { exchangeCodeForToken } from '@instantdb/platform';
 import { AuthInfo } from '@modelcontextprotocol/sdk/server/auth/types.js';
-import { PlatformApiAuth } from '../../platform/dist/esm/api.js';
 import { PlatformApi } from '@instantdb/platform';
+import type { PlatformApiAuth } from '../node_modules/@instantdb/platform/dist/esm/api.d.ts';
 import cookieParser from 'cookie-parser';
 import {
   InvalidRequestError,
@@ -91,7 +91,7 @@ export function makeApiAuth(
     }),
     clientId: oauthConfig.clientId,
     clientSecret: oauthConfig.clientSecret,
-    onRefresh: async ({ accessToken, expiresAt }) => {
+    onRefresh: async ({ accessToken, expiresAt }: { accessToken: string; expiresAt: Date }) => {
       await db.transact(
         db.tx.instantTokens[instantTokenEnt.id].update({
           accessToken: encrypt({
